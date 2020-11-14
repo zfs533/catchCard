@@ -1,0 +1,30 @@
+{
+  "name": "tibao-tool",
+  "version": "2.11",
+  "description": "提包cocos扩展工具",
+  "author": "刑天",
+  "main": "main.js",
+  "main-menu": {
+    "提包扩展/高级构建": {
+      "message": "tibao-tool:openBuild",
+      "accelerator": "Cmd+Shift+B"
+    },
+    "提包扩展/打开Xcode": {
+      "message": "tibao-tool:openXcode",
+      "accelerator": "Cmd+Shift+X"
+    },
+    "提包扩展/删除build目录": {
+      "message": "tibao-tool:delBuild",
+      "accelerator": "Cmd+Shift+D"
+    }
+  },
+  "panel": {
+    "main": "panel/index.js",
+    "type": "dockable",
+    "title": "高级构建面板",
+    "width": 650,
+    "min-width": 650,
+    "height": 800,
+    "min-height": 800
+  }
+}

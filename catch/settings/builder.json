@@ -1,0 +1,91 @@
+{
+	"appKey": "",
+	"appSecret": "",
+	"encryptJs": true,
+	"excludeScenes": [],
+	"fb-instant-games": {},
+	"includeAnySDK": false,
+	"includeSDKBox": false,
+	"inlineSpriteFrames": true,
+	"inlineSpriteFrames_native": true,
+	"jailbreakPlatform": false,
+	"md5Cache": false,
+	"mergeStartScene": false,
+	"oauthLoginServer": "",
+	"optimizeHotUpdate": true,
+	"orientation": {
+		"landscapeLeft": true,
+		"landscapeRight": true,
+		"portrait": false,
+		"upsideDown": false
+	},
+	"packageName": "org.cocos2d.test001",
+	"privateKey": "",
+	"qqplay": {
+		"REMOTE_SERVER_ROOT": "",
+		"orientation": "portrait"
+	},
+	"renderMode": "0",
+	"startScene": "57c27909-3cfc-4262-a51d-5e706df73710",
+	"title": "test001",
+	"webOrientation": "auto",
+	"wechatgame": {
+		"REMOTE_SERVER_ROOT": "",
+		"appid": "wx6ac3f5090a6b99c5",
+		"isSubdomain": false,
+		"orientation": "portrait",
+		"subContext": ""
+	},
+	"xxteaKey": "8xc7r4zv-8u5h-ml",
+	"zipCompressJs": true,
+	"isBuilding": false,
+	"logView": " 正在构建，请稍后......\n初步构建完成\n设置icon成功\n设置启动图成功\n制作美宣图成功\n修改md5成功\nres文件夹下的文件加密成功\nsrc文件夹下的文件加密成功\nscript文件夹下的文件加密成功\n已经在 /Volumes/work/package/cocos/catch19/build/jsb-default/res 目录下生成垃圾文件 103 个, 垃圾文件夹 60 个, 共计大小 213 kB\n\n已经在 /Volumes/work/package/cocos/catch19/build/jsb-default/src 目录下生成垃圾文件 4 个, 垃圾文件夹 4 个, 共计大小 6 kB\n\n已经在 /Volumes/work/package/cocos/catch19/build/jsb-default/frameworks/cocos2d-x/cocos/scripting/js-bindings/script 目录下生成垃圾文件 62 个, 垃圾文件夹 38 个, 共计大小 122 kB\n\n修改类名成功\n混淆引擎源代码成功\n生成C++类成功\n",
+	"IsModifyEngine": true,
+	"IsModifyClass": true,
+	"hotUpdateM": "null",
+	"hotUpdateML": [
+		{
+			"text": "无热更新，不修改",
+			"value": "null"
+		},
+		{
+			"text": "cocos creator 1.9.3",
+			"value": "193"
+		},
+		{
+			"text": "cocos creator 2.0.9",
+			"value": "209"
+		}
+	],
+	"openXcode": true,
+	"hotXxteaKey": "null",
+	"cppParam": "10",
+	"projName": "pack",
+	"buildScene": "57c27909-3cfc-4262-a51d-5e706df73710",
+	"sceneUrl": [
+		{
+			"value": "92fcb71d-c27a-4d6d-bc70-d4488ee79b5c",
+			"text": "db://assets/scene/game.fire"
+		},
+		{
+			"value": "59bbabe3-1828-4ec4-9071-a9bfe6bbb353",
+			"text": "db://assets/scene/lobby.fire"
+		},
+		{
+			"value": "57c27909-3cfc-4262-a51d-5e706df73710",
+			"text": "db://assets/scene/start.fire"
+		}
+	],
+	"isMd5": true,
+	"isRename": true,
+	"encryption_script": true,
+	"encryption_src": true,
+	"encryption_res": true,
+	"invalid_factor": 0.5,
+	"invalid_script": true,
+	"invalid_src": true,
+	"invalid_res": true,
+	"meixImagePath": "/Volumes/work/package/cocos/catch19/build/meixuan/",
+	"startImagePath": "/Volumes/work/package/cocos/catch19/assets/aqietux/bg_1.png",
+	"iconPath": "/Volumes/work/package/cocos/catch19/icon.png"
+}

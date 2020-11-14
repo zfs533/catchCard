@@ -1,0 +1,4 @@
+${LOGIC_CONTENT}
+${FMT}if( ${LOGIC} ) {
+${FMT}${CALL_CONTENT}
+${FMT}} 

@@ -1,0 +1,32 @@
+{
+  "cocos-analytics": {
+    "appID": "13798",
+    "appSecret": "959b3ac0037d0f3c2fdce94f8421a9b2",
+    "channel": "",
+    "enable": false,
+    "version": ""
+  },
+  "collision-matrix": [
+    [
+      true
+    ]
+  ],
+  "design-resolution-height": 640,
+  "design-resolution-width": 1136,
+  "excluded-modules": [
+    "3D Physics/Builtin"
+  ],
+  "fit-height": true,
+  "fit-width": true,
+  "group-list": [
+    "default"
+  ],
+  "simulator-orientation": false,
+  "simulator-resolution": {
+    "height": 640,
+    "width": 960
+  },
+  "start-scene": "57c27909-3cfc-4262-a51d-5e706df73710",
+  "use-customize-simulator": true,
+  "use-project-simulator-setting": false
+}

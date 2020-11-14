@@ -1,0 +1,19 @@
+{
+  "name": "garbage",
+  "version": "0.0.1",
+  "description": "生成垃圾代码插件",
+  "author": "xsd",
+  "main": "main.js",
+  "main-menu": {
+    "garbage/打开面板": {
+      "message": "garbage:openPanel"
+    }
+  },
+  "panel": {
+    "main": "panel/index.js",
+    "type": "dockable",
+    "title": "操作面板",
+    "width": 400,
+    "height": 300
+  }
+}

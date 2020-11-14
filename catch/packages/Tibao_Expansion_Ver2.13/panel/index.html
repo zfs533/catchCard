@@ -1,0 +1,170 @@
+<ui-panel-frame class="fit">
+    <section>
+        <ui-markdown>
+            ---
+            # 高级构建插件！
+            ---
+        </ui-markdown>
+
+        <ui-prop name="初始场景" tooltip="请输入选择初始场景">
+            <ui-select class="flex-1" v-value="buildScene">
+                <template v-for="item in sceneUrl">
+                    <option v-bind:value="item.value">{{item.text}}</option>
+                </template>
+            </ui-select>
+        </ui-prop>
+
+        <ui-prop name="项目名称" tooltip="请输入一个项目名称, 不要写中文">
+            <div class="layout horizontal content flex-1">
+                <ui-input class="flex-2" v-value="projName">
+                </ui-input>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="icon路径(为空不设置)" tooltip="选择一个icon图片">
+            <div class="layout horizontal content flex-1">
+                <ui-input class="flex-2" v-value="iconPath">
+                </ui-input>
+                <ui-button class="small" id="chooseIcon" v-on:confirm="onChooseFile">
+                    ···
+                </ui-button>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="启动图路径(为空不设置)" tooltip="选择一个启动图路径">
+            <div class="layout horizontal content flex-1">
+                <ui-input class="flex-2" v-value="startImagePath">
+                </ui-input>
+                <ui-button class="small" id="chooseStartImage" v-on:confirm="onChooseFile">
+                    ···
+                </ui-button>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="美宣图路径(为空不设置)" tooltip="选择美宣图路径">
+            <div class="layout horizontal content flex-1">
+                <ui-input class="flex-2" v-value="meixImagePath">
+                </ui-input>
+                <ui-button class="small" id="chooseMeixImage" v-on:confirm="onChooseFile">
+                    ···
+                </ui-button>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="是否生成垃圾文件" auto-height tooltip="选择是否在目标文件夹下生成垃圾文件(请注意：script文件夹第一次构建勾选即可，多次勾选文件夹会呈指数倍增加，很恐怖))">
+            <div class="flex-1 layout horizontal">
+                <ui-checkbox class="item" v-value="invalid_res">
+                    res
+                </ui-checkbox>
+                <ui-checkbox class="item" v-value="invalid_src">
+                    src
+                </ui-checkbox>
+                <ui-checkbox class="item" v-value="invalid_script">
+                    script
+                </ui-checkbox>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="垃圾文件整体数量因子" auto-height tooltip="可以用来整体调整生成垃圾文件的数量(只要在勾选生成垃圾文件时次选项才有效)">
+            <div class="flex-1 layout horizontal">
+                <ui-slider style="width: 90%;" v-value="invalid_factor" max=5 min=0.5></ui-slider>
+                <span class="text"></span>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="是否加密资源" auto-height tooltip="选择是否在目标文件夹下加密文件">
+            <div class="flex-1 layout horizontal">
+                <ui-checkbox class="item" v-value="encryption_res">
+                    res
+                </ui-checkbox>
+                <ui-checkbox class="item" v-value="encryption_src">
+                    src
+                </ui-checkbox>
+                <ui-checkbox class="item" v-value="encryption_script">
+                    script
+                </ui-checkbox>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="是否修改MD5" auto-height tooltip="选择是否是否修改文件的MD5值">
+            <div class="flex-1 layout horizontal">
+                <ui-checkbox class="item" v-value="isMd5"></ui-checkbox>
+            </div>
+        </ui-prop>
+
+        <!-- <ui-prop name="是否对资源目录重命名" auto-height tooltip="对res、src、script文件夹下所有资源对文件名加密">
+            <div class="flex-1 layout horizontal">
+                <ui-checkbox class="item" v-value="isRename"></ui-checkbox>
+            </div>
+        </ui-prop> -->
+
+        <ui-prop name="是否修改类名" auto-height tooltip="选择是否是否修改文件的MD5值">
+            <div class="flex-1 layout horizontal">
+                <ui-checkbox class="item" v-value="IsModifyClass"></ui-checkbox>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="混淆引擎源代码" auto-height tooltip="向引擎cpp源代码中植入垃圾代码，改变代码结构">
+            <div class="flex-1 layout horizontal">
+                <ui-checkbox class="item" v-value="IsModifyEngine"></ui-checkbox>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="构建后自动打开Xcode" auto-height tooltip="勾选后在构建结束会自动打开Xcode">>
+            <div class="flex-1 layout horizontal">
+                <ui-checkbox class="item" v-value="openXcode"></ui-checkbox>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="加密密钥" auto-height tooltip="jsb代码加密密钥">
+            <div class="layout horizontal content flex-1">
+                <ui-input class="flex-2" v-value="xxteaKey" readonly>
+                </ui-input>
+                <ui-select v-value="hotXxteaKey" v-on:confirm="onChangeHotXX">
+                    <option value="null">随机生成</option>
+                    <option value="clear">不加密</option>
+                    <option value="!e@wT2v#hNol%zH1">一部凯旋</option>
+                    <option value="!e@wT2v#hNol%zH1">一部有趣</option>
+                    <option value="!e@wT2v#hNol%zH1">一部星光</option>
+                    <option value="!ehdjjasjf#@!j4e">一部金猪</option>
+                    <option value="#A2q@6T*M9o$X8cP">一部花样</option>
+                    <option value="3r#A!4Tv5*Gm">一部西部</option>
+                    <option value="!ehdjjasjf#@!j4e">一部少女</option>
+                    <option value="!e@wTf65grd3@">二部魔方</option>
+                    <option value="#r3Rw*4Qc@N9C">二部魔盒</option>
+                    <option value="M$9iO0i%D6@1I3t#">二部魔笛</option>
+                    <option value="6T*M9o$@#%Niu12">二部牛仔</option>
+                    <option value="#A!Bq@uT*Mvo$X">二部星云</option>
+                    <option value="Nut$60ug!89qmUN8">测试凯旋</option>
+                    <option value="S$6A0*g!O8@qN0#V">测试少女</option>
+                </ui-select>
+            </div>
+        </ui-prop>
+
+        <ui-prop name="热更新修改main.js" tooltip="用于热更新版本main.js添加搜索路径">
+            <ui-select class="flex-1" v-value="hotUpdateM">
+                <template v-for="item in hotUpdateML">
+                    <option v-bind:value="item.value">{{item.text}}</option>
+                </template>
+            </ui-select>
+        </ui-prop>
+
+        <ui-prop name="C++类数量" tooltip="C++类数量, 空表示不生成C++类">
+            <div class="layout horizontal content flex-1">
+                <ui-input class="flex-2" v-value="cppParam">
+                </ui-input>
+            </div>
+        </ui-prop>
+    </section>
+
+    <ui-markdown> --- </ui-markdown>
+
+    <div class="center">
+        <ui-button class="green" v-disabled="isBuilding" v-on:confirm="onBuildClick"> 开始构建 </ui-button>
+    </div>
+
+    <ui-markdown> --- </ui-markdown>
+    <textarea class="flex-1" readonly v-value="logView"
+        style="width: 100%; height: 100%; background: #252525;	color: #00fa32;	border-color: #fd942b;"></textarea>
+
+</ui-panel-frame>

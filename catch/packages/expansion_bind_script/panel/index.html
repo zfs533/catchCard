@@ -1,0 +1,22 @@
+<panel-frame>
+    <div class="layout horizontal center-justified">
+        <ui-markdown class="self-center">
+            ### 为当前场景中选中节点添加脚本组件
+        </ui-markdown>
+    </div>
+    <ui-markdown class="self-center">
+        -------
+    </ui-markdown>
+    <ui-prop name="脚本组件名" tooltip=“不能为空” class="flex-1">
+        <ui-input placeholder="input script name" v-value="className"></ui-input>
+    </ui-prop>
+    <ui-prop name="保存目录" tooltip="相对于assets/script目录，不填写则默认保存在该目录下" class="flex-1">
+        <ui-input placeholder="login/main" v-value="pathName"></ui-input>
+    </ui-prop>
+    <ui-markdown class="self-center">
+        -------
+    </ui-markdown>
+    <div class="layout horizontal center-justified">
+        <ui-button class="green" @confirm="startBtnEvent">开始</ui-button>
+    </div>
+</panel-frame>

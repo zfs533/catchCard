@@ -1,0 +1,23 @@
+<ui-panel-frame class="fit">
+    <ui-markdown>
+        ---
+        ## 生成垃圾代码
+        ---
+    </ui-markdown>
+
+    <label for="other">原理：向asserts/script目录下的所有ts文件中加入垃圾代码；加入的垃圾代码不影响原有程序</label>
+    <ui-markdown> --- </ui-markdown>
+    <ui-prop name="是否备份原始代码" auto-height>
+        <div class="flex-1 layout horizontal">
+            <ui-checkbox class="item" v-value="saveYes">
+                是
+            </ui-checkbox>
+        </div>
+    </ui-prop>
+    <ui-markdown> --- </ui-markdown>
+    <label for="other">注意：若选择备份原始代码，保存路径为项目根目录</label>
+    <ui-markdown> --- </ui-markdown>
+    <div class="layout horizontal">
+        <ui-button class="green" v-disabled="isBuilding" v-on:confirm="onStartClick"> 开始 </ui-button>
+    </div>
+</ui-panel-frame>
